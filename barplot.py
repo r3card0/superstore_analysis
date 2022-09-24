@@ -37,6 +37,10 @@ sales = sales_col()
 # 04 create plot
 def barplot():
     plt.bar(category,sales,width=0.5,color=bar_color)
+    plt.ylabel('Sales $USD')
+    plt.xlabel('Category')
+    plt.title('Sales by Category')
+    #plt.legend('Sales')
     plt.show()
 
 

@@ -5,23 +5,38 @@ from df_copy import copy
 
 df = copy()
 
-# select columns 'Category' and 'Sales'
+# 01 create a dataframe with 'Category' and 'Sales' columns
+def cat_sal_cols():
+    df1 = df[['Category','Sales']]
+    return df1
+
+# global variables
+bar_color = ['#ffbf00','#ff033e','#a4c639']
+df1 = cat_sal_cols()
+
+# 02 set index to df1 and sum 'Sales' by 'Category'
+def group_cat():
+    df_grp = df1.groupby('Category').sum().reset_index()
+    return df_grp
+
+df2 = group_cat()
+
+# 03 Split by 'Category' and 'Sales'
 def category_col():
-    category = df['Category']
+    category = df2['Category']
     return category
 
 def sales_col():
-    sales = df['Sales']
+    sales = df2['Sales']
     return sales
 
-
-# create global variables
 category = category_col()
 sales = sales_col()
 
-# create barplot
+
+# 04 create plot
 def barplot():
-    plt.bar(category,sales)
+    plt.bar(category,sales,width=0.5,color=bar_color)
     plt.show()
 
 

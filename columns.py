@@ -4,8 +4,12 @@ from readfile import readfile
 
 df_read = readfile()
 
+def read_columns():
+    readcolumns = df_read.columns
+    return readcolumns
+
 def run():
-    print(df_read.head(5))
+    print(read_columns())
 
 if __name__ == "__main__":
     run()

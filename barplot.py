@@ -11,12 +11,13 @@ def cat_sal_cols():
     return df1
 
 # global variables
-bar_color = ['#ffbf00','#ff033e','#a4c639']
+bar_color = ['#ff033e','#5d8aa8','#ed872d']
 df1 = cat_sal_cols()
 
 # 02 set index to df1 and sum 'Sales' by 'Category'
 def group_cat():
     df_grp = df1.groupby('Category').sum().reset_index()
+    df_grp = df_grp.sort_values('Sales',ascending=False)
     return df_grp
 
 df2 = group_cat()

@@ -12,8 +12,15 @@ def description():
 
 df = copy()
 
+# 01 create a dataframe with 'Profit' and 'Sales' columns
+def prof_sal_cols():
+    df1 = df[['Profit','Sales']]
+    return df1
+
+df1 = prof_sal_cols()
+
 def run():
-    pass
+    print(df1)
 
 if __name__ == "__main__":
     run()

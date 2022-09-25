@@ -33,7 +33,7 @@ sales = sales_col()
 
 # 03 Create scatterplot
 def scatterplot():
-    sns.scatterplot(data=df, x='Profit', y='Sales')
+    sns.scatterplot(data=df, x='Profit', y='Sales', hue='Order Date')
     plt.show()
 
 def run():

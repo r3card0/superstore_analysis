@@ -1,7 +1,7 @@
 import pandas as pd
 from openpyxl.workbook import workbook
 import matplotlib.pyplot as plt
-import seaborn as np
+import seaborn as sns
 from df_copy import copy
 
 def description():
@@ -19,8 +19,25 @@ def prof_sal_cols():
 
 df1 = prof_sal_cols()
 
+# 02 Split by 'Profit' and 'Sales'
+def profit_col():
+    profit = df1['Profit']
+    return profit
+
+def sales_col():
+    sales = df1['Sales']
+    return sales
+
+profit = profit_col()
+sales = sales_col()
+
+# 03 Create scatterplot
+def scatterplot():
+    sns.scatterplot(data=df, x='Profit', y='Sales')
+    plt.show()
+
 def run():
-    print(df1)
+    print(scatterplot())
 
 if __name__ == "__main__":
     run()

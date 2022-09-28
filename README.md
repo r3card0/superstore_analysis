@@ -1,3 +1,5 @@
+![vizz01](/vizz_01.png)
+
 # Analysis of a Sales of a Super Store in the United States
 
 ## Objective
